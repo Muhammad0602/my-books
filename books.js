@@ -28,16 +28,54 @@ add.addEventListener('click', () => {
 
     myCollection.push(obj);
 
+    localStorage.setItem('myCollection', JSON.stringify(myCollection));
+
     title.value = "";
     author.value = "";
+
     btn.addEventListener('click', () => {
-      books.remove();
-      //console.log(myCollection.indexOf(obj));
-      myCollection.splice(myCollection.indexOf(obj), 1);
-      console.log(myCollection);
+    books.remove();
+    myCollection.splice(myCollection.indexOf(obj), 1);
+    localStorage.setItem('myCollection', JSON.stringify(myCollection));
     });
     
 });
+
+window.addEventListener('load', () => {
+    const restore = JSON.parse(localStorage.getItem('myCollection'));
+    for(let i=0; i<restore.length; i++){
+    const obj = {};
+    const books = document.createElement('div');
+    const h4 = document.createElement('h4');
+    const h5 = document.createElement('h5');
+    const btn = document.createElement('button');
+    const hr = document.createElement('hr');
+    
+    myBooks.appendChild(books);
+    
+    h4.textContent = restore[i].title;
+    h5.textContent = restore[i].author;
+    btn.textContent = 'Remove';
+
+    books.appendChild(h4);
+    books.appendChild(h5);
+    books.appendChild(btn);
+    books.appendChild(hr);
+
+   myCollection = restore;
+
+    title.value = "";
+    author.value = "";
+
+    btn.addEventListener('click', () => {
+    books.remove();
+    myCollection.splice(i, 1);
+    localStorage.setItem('myCollection', JSON.stringify(myCollection));
+    });
+}
+});
+
+  
 
 
 
