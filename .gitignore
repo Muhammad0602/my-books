@@ -1,3 +1,7 @@
+<<<<<<< HEAD
 node_modules
 package-lock.json
 .stylelintrc.json
+=======
+node_modules/
+>>>>>>> 96912e9fcfd1794428c66ee15ce8f068e75fbdbe
