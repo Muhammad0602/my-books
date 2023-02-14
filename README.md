@@ -91,7 +91,7 @@ To run the project, execute the following command:
 
 👤 **Franck**
 
-- GitHub: [BahirHakimy](https://github.com/francksefu)
+- GitHub: [francksefu](https://github.com/francksefu)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
