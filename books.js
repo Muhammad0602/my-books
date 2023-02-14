@@ -14,57 +14,39 @@ class Books {
 
    add(myBooksB) {
      const books = document.createElement('tr');
-     // const h4 = document.createElement('h4');
-     // const h5 = document.createElement('h5');
      const btn = document.createElement('button');
      const tdBtn = document.createElement('td');
-     // const hr = document.createElement('hr');
      const td = document.createElement('td');
      tdBtn.appendChild(btn);
      tdBtn.classList.add('remove-btn');
 
      myBooksB.appendChild(books);
 
-     // h4.textContent = this.title;
-     // h5.textContent = this.author;
      btn.textContent = 'Remove';
      td.textContent = `"${this.title}" by ${this.author}`;
 
-     // books.appendChild(h4);
-     // books.appendChild(h5);
      books.appendChild(td);
      books.appendChild(tdBtn);
-     // books.appendChild(hr);
      Books.myCollection.push(this.obj);
      localStorage.setItem('myCollection', JSON.stringify(Books.myCollection));
      btn.addEventListener('click', () => {
-       this.removeThing(books);
+       books.remove();
        Books.myCollection.splice(Books.myCollection.indexOf(this.obj), 1);
        localStorage.setItem('myCollection', JSON.stringify(Books.myCollection));
-       // console.log(Books.myCollection.indexOf(this.obj));
      });
-   }
-
-   removeThing(bookT) {
-     bookT.remove();
    }
 
    static loading(myBooksB) {
      const restore = JSON.parse(localStorage.getItem('myCollection'));
      for (let i = 0; i < restore.length; i += 1) {
        const books = document.createElement('tr');
-       //  const h4 = document.createElement('h4');
-       //  const h5 = document.createElement('h5');
        const td = document.createElement('td');
        const btn = document.createElement('button');
        const tdBtn = document.createElement('td');
-       //  const hr = document.createElement('hr');
        tdBtn.classList.add('remove-btn');
        let tab = Books.myCollection;
        myBooksB.appendChild(books);
 
-       // h4.textContent = restore[i].title;
-       // h5.textContent = restore[i].author;
        td.textContent = `"${restore[i].title}" by ${restore[i].author}`;
        btn.textContent = 'Remove';
        books.appendChild(td);
