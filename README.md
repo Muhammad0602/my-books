@@ -52,7 +52,7 @@ This is a project about adding and removing books to the collection you have.
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link](https://muhammad0602.github.io/Portfolio-mobile-first/)
+- not available yet
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -89,9 +89,9 @@ To run the project, execute the following command:
 - Twitter: [Muhammad Davlatov](https://twitter.com/MuhammadDavla20)
 - LinkedIn: [Muhammad Davlatov](https://www.linkedin.com/in/muhammad-davlatov-6a8536254/)
 
-👤 **Bahir Hakimi**
+👤 **Franck**
 
-- GitHub: [BahirHakimy](https://github.com/BahirHakimy)
+- GitHub: [BahirHakimy](https://github.com/francksefu)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
