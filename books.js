@@ -1,74 +1,81 @@
-const add = document.getElementById('add');
+const addBtn = document.getElementById('add');
 const myBooks = document.getElementById('my-books');
-const myCollection = [];
 
 const title = document.getElementById('title');
 const author = document.getElementById('author');
-add.addEventListener('click', () => {
-  const obj = {};
-  const books = document.createElement('div');
-  const h4 = document.createElement('h4');
-  const h5 = document.createElement('h5');
-  const btn = document.createElement('button');
-  const hr = document.createElement('hr');
+class Books {
+  constructor(title, author) {
+    this.title = title;
+    this.author = author;
+    this.obj = { title: this.title, author: this.author };
+  }
 
-  myBooks.appendChild(books);
+   static myCollection = [];
 
-  h4.textContent = title.value;
-  h5.textContent = author.value;
-  btn.textContent = 'Remove';
+   add(myBooksB) {
+     const books = document.createElement('tr');
+     const btn = document.createElement('button');
+     const tdBtn = document.createElement('td');
+     const td = document.createElement('td');
+     tdBtn.appendChild(btn);
+     tdBtn.classList.add('remove-btn');
 
-  books.appendChild(h4);
-  books.appendChild(h5);
-  books.appendChild(btn);
-  books.appendChild(hr);
+     myBooksB.appendChild(books);
 
-  obj.title = title.value;
-  obj.author = author.value;
+     btn.textContent = 'Remove';
+     td.textContent = `"${this.title}" by ${this.author}`;
 
-  myCollection.push(obj);
+     books.appendChild(td);
+     books.appendChild(tdBtn);
+     Books.myCollection.push(this.obj);
+     localStorage.setItem('myCollection', JSON.stringify(Books.myCollection));
+     btn.addEventListener('click', () => {
+       books.remove();
+       Books.myCollection.splice(Books.myCollection.indexOf(this.obj), 1);
+       localStorage.setItem('myCollection', JSON.stringify(Books.myCollection));
+     });
+   }
 
-  localStorage.setItem('myCollection', JSON.stringify(myCollection));
+   static loading(myBooksB) {
+     const restore = JSON.parse(localStorage.getItem('myCollection'));
+     for (let i = 0; i < restore.length; i += 1) {
+       const books = document.createElement('tr');
+       const td = document.createElement('td');
+       const btn = document.createElement('button');
+       const tdBtn = document.createElement('td');
+       tdBtn.classList.add('remove-btn');
+       let tab = Books.myCollection;
+       myBooksB.appendChild(books);
 
+       td.textContent = `"${restore[i].title}" by ${restore[i].author}`;
+       btn.textContent = 'Remove';
+       books.appendChild(td);
+       tdBtn.appendChild(btn);
+       books.appendChild(tdBtn);
+
+       tab = restore;
+       Books.myCollection = tab;
+       title.value = '';
+       author.value = '';
+
+       btn.addEventListener('click', () => {
+         books.remove();
+         tab.splice(i, 1);
+         localStorage.setItem('myCollection', JSON.stringify(tab));
+       });
+     }
+   }
+}
+
+addBtn.addEventListener('click', () => {
+  const title1 = title.value;
+  const author1 = author.value;
   title.value = '';
   author.value = '';
-
-  btn.addEventListener('click', () => {
-    books.remove();
-    myCollection.splice(myCollection.indexOf(obj), 1);
-    localStorage.setItem('myCollection', JSON.stringify(myCollection));
-  });
+  const obj = new Books(title1, author1);
+  obj.add(myBooks);
 });
 
 window.addEventListener('load', () => {
-  const restore = JSON.parse(localStorage.getItem('myCollection'));
-  for (let i = 0; i < restore.length; i += 1) {
-    const books = document.createElement('div');
-    const h4 = document.createElement('h4');
-    const h5 = document.createElement('h5');
-    const btn = document.createElement('button');
-    const hr = document.createElement('hr');
-    let tab = myCollection;
-    myBooks.appendChild(books);
-
-    h4.textContent = restore[i].title;
-    h5.textContent = restore[i].author;
-    btn.textContent = 'Remove';
-
-    books.appendChild(h4);
-    books.appendChild(h5);
-    books.appendChild(btn);
-    books.appendChild(hr);
-
-    tab = restore;
-
-    title.value = '';
-    author.value = '';
-
-    btn.addEventListener('click', () => {
-      books.remove();
-      tab.splice(i, 1);
-      localStorage.setItem('myCollection', JSON.stringify(tab));
-    });
-  }
+  Books.loading(myBooks);
 });

@@ -1,3 +1,66 @@
 body {
   box-sizing: border-box;
 }
+
+h1 {
+  text-align: center;
+}
+
+table {
+  border-collapse: collapse;
+  width: 80%;
+  border: 3px solid black;
+  margin: 0 10%;
+}
+
+td {
+  text-align: left;
+  padding: 8px;
+  margin-right: 5px;
+}
+
+tr:nth-child(odd) {
+  background-color: #e1dcdcb5;
+}
+
+.remove-btn {
+  width: 35%;
+}
+
+button {
+  box-shadow: 3px 2px black;
+}
+
+.remove-btn button {
+  width: 80%;
+  border: 2px solid black;
+}
+
+.flex-container {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 30px auto;
+}
+
+.flex-container .line {
+  width: 45%;
+  height: 2px;
+  background-color: black;
+}
+
+.flex-container h2 {
+  margin-bottom: 5px;
+}
+
+.flex-container button {
+  align-self: flex-end;
+}
+
+.flex-container input {
+  width: 100%;
+  border: 2px solid black;
+}
