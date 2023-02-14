@@ -11,20 +11,24 @@ table {
   width: 80%;
   border: 3px solid black;
   margin: 0 10%;
-  }
-  
-  td {
+}
+
+td {
   text-align: left;
   padding: 8px;
   margin-right: 5px;
-  }
-  
-  tr:nth-child(odd) {
-    background-color: #e1dcdcb5;
+}
+ 
+tr:nth-child(odd) {
+  background-color: #e1dcdcb5;
 }
 
 .remove-btn {
   width: 35%;
+}
+
+button {
+  box-shadow: 3px 2px black;
 }
 
 .remove-btn button {
@@ -59,8 +63,4 @@ table {
 .flex-container input {
   width: 100%;
   border: 2px solid black;
-}
-
-button {
-  box-shadow: 3px 2px black;
 }
