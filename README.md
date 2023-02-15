@@ -29,7 +29,7 @@
 # 📖 My books <a name="about-project"></a>
 
 
-This is a project about adding and removing books to the collection you have.
+This is a project about adding and removing books to the collection you have. It has three pages and uses SPA to display them.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -92,6 +92,8 @@ To run the project, execute the following command:
 👤 **Franck**
 
 - GitHub: [francksefu](https://github.com/francksefu)
+- Twitter: [francksefu](https://twitter.com/franck_sefu)
+- LinkedIn: [francksefu](https://www.linkedin.com/in/franck-sefu-884705254/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
