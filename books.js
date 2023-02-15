@@ -1,6 +1,10 @@
 const addBtn = document.getElementById('add');
 const myBooks = document.getElementById('my-books');
-
+const addBook = document.querySelector('.flex-container');
+const contact = document.querySelector('.contact-form');
+const listLink = document.querySelector('#list-link');
+const addLink = document.querySelector('#add-link');
+const contactLink = document.querySelector('#contact-link');
 const title = document.getElementById('title');
 const author = document.getElementById('author');
 class Books {
@@ -79,5 +83,25 @@ addBtn.addEventListener('click', () => {
 });
 
 window.addEventListener('load', () => {
+  addBook.style.display = 'none';
+  contact.style.display = 'none';
   Books.loading(myBooks);
+});
+
+listLink.addEventListener('click', () => {
+  myBooks.style.display = 'flex';
+  addBook.style.display = 'none';
+  contact.style.display = 'none';
+});
+
+addLink.addEventListener('click', () => {
+  myBooks.style.display = 'none';
+  addBook.style.display = 'flex';
+  contact.style.display = 'none';
+});
+
+contactLink.addEventListener('click', () => {
+  myBooks.style.display = 'none';
+  addBook.style.display = 'none';
+  contact.style.display = 'flex';
 });

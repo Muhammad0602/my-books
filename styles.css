@@ -7,6 +7,8 @@ h1 {
 }
 
 table {
+  display: flex;
+  flex-direction: column;
   border-collapse: collapse;
   width: 80%;
   border: 3px solid black;
@@ -17,6 +19,11 @@ td {
   text-align: left;
   padding: 8px;
   margin-right: 5px;
+}
+
+tr {
+  display: flex;
+  justify-content: space-between;
 }
 
 tr:nth-child(odd) {
@@ -95,4 +102,12 @@ footer h3 {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.show {
+  display: flex;
+}
+
+.hide {
+  display: none;
 }
