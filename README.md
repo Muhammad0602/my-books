@@ -52,7 +52,7 @@ This is a project about adding and removing books to the collection you have. It
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- not available yet
+- [check live version](https://muhammad0602.github.io/my-books/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
