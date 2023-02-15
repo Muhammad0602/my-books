@@ -9,15 +9,39 @@
     <script defer src="books.js"></script>
 </head>
 <body>
-    <h1>All awesome books</h1>
+    <header>
+        <nav class="navbar">
+            <h3>Awesome books</h3>
+            <ul>
+                <li id="list-link">List</li>
+                <li class="line-vertical"></li>
+                <li id="add-link">Add new</li>
+                <li class="line-vertical"></li>
+                <li id="contact-link">Contact</li>
+            </ul>
+        </nav>
+    </header>
+    <p id="date-time"></p>
+    <h1 id="h1">All awesome books</h1>
     <table id="my-books">
     </table>
     <div class="flex-container">
-        <div class="line"></div>
         <h2>Add a new book</h2>
         <input id="title" type="text" placeholder="title">
         <input id="author" type="text" placeholder="author">
         <button id="add">Add</button>
     </div>
+    <section class="contact-form">
+        <h2>Contact Information</h2>
+        <p>Do you have any questions or you just want to say "Hello"? <br>You can reach out to us!</p>
+        <ul>
+            <li>Our email:mail@mail.com</li>
+            <li>Our phone number: 0043586534422</li>
+            <li>Our address: streetname 22, 84503 City, Country</li>         
+        </ul>
+    </section>
+    <footer>
+        <h3 class="navbar">Copyright &#160&#160 ...</h3>
+    </footer>
 </body>
 </html>
