@@ -7,6 +7,13 @@ h1 {
   text-align: center;
 }
 
+p#date-time {
+  text-align: end;
+  margin-top: 5px;
+  margin-right: 13px;
+  font-size: 13px;
+}
+
 table {
   display: flex;
   flex-direction: column;
@@ -108,12 +115,4 @@ footer h3 {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-.show {
-  display: flex;
-}
-
-.hide {
-  display: none;
 }
