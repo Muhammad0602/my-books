@@ -5,7 +5,7 @@ const contact = document.querySelector('.contact-form');
 const listLink = document.querySelector('#list-link');
 const addLink = document.querySelector('#add-link');
 const pdate = document.querySelector('#date-time');
-//const now = new Date();
+// const now = new Date();
 const contactLink = document.querySelector('#contact-link');
 const h1 = document.querySelector('#h1');
 const title = document.getElementById('title');
@@ -80,45 +80,19 @@ addBtn.addEventListener('click', () => {
   title.value = '';
   author.value = '';
   const obj = new Books(title1, author1);
-  if(obj.title.length>0 && obj.author.length>0){
+  if (obj.title.length > 0 && obj.author.length > 0) {
     obj.add(myBooks);
   }
 });
-
-/*function countM(val){
-  switch(val) {
-    case 0:
-      return January;
-      case 1:
-        return Febuary;
-      case 2:
-        return January; 
-      case 3:
-        return January;
-      case 4:
-        return January;
-      case 5:
-        return January;
-      case 6:
-        return January;
-      case 7:
-        return January;
-      case 8:
-        return January;
-      case 0:
-        return January;
-      case 0:
-        return January;
-
-  }
-}*/
 
 window.addEventListener('load', () => {
   listLink.style.color = 'blue';
   addBook.style.display = 'none';
   contact.style.display = 'none';
   h1.style.display = 'block';
-  pdate.innerHTML = new Date().toLocaleString('en-us',{month:'long', year:'numeric', hour:'numeric', minute:'numeric', second:'numeric'})//`${now.getMonth()} ${now.getDay()} th ${now.getFullYear()}, ${now.getHours()}:${now.getMinutes()}:${now.getSeconds()}`
+  pdate.innerHTML = new Date().toLocaleString('en-us', {
+    month: 'long', year: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric',
+  });
   Books.loading(myBooks);
 });
 
