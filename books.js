@@ -73,7 +73,9 @@ addBtn.addEventListener('click', () => {
   title.value = '';
   author.value = '';
   const obj = new Books(title1, author1);
-  obj.add(myBooks);
+  if(obj.title.length>0 && obj.author.length>0){
+    obj.add(myBooks);
+  }
 });
 
 window.addEventListener('load', () => {
